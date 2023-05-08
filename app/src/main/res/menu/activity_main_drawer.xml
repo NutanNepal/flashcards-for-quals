@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_subjects"
+            android:icon="@drawable/ic_menu_subjects"
+            android:title="@string/menu_subjects" />
+        <item
+            android:id="@+id/nav_topics"
+            android:icon="@drawable/ic_menu_topics"
+            android:title="@string/menu_topics" />
+        <item
+            android:id="@+id/nav_everything"
+            android:icon="@drawable/ic_menu_everything"
+            android:title="@string/menu_everything" />
+    </group>
+    <group>
+    <item
+        android:id="@+id/theme_switch"
+        android:title="@string/theme_switch"
+        app:actionLayout="@layout/switch_item"
+        app:showAsAction="always" />
+    </group>
+</menu>
