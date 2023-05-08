@@ -13,6 +13,9 @@
         android:theme="@style/Theme.FlashcardsApp"
         tools:targetApi="31">
         <activity
+            android:name=".ui.topics.ActivityFlashcardsTopics"
+            android:exported="false" />
+        <activity
             android:name=".ui.subjects.ActivityFlashcardsSubjects"
             android:exported="false" />
         <activity

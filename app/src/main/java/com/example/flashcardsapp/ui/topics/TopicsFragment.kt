@@ -1,10 +1,12 @@
 package com.example.flashcardsapp.ui.topics
 
+import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.ArrayAdapter
+import android.widget.ListView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.flashcardsapp.databinding.FragmentTopicsBinding
@@ -27,10 +29,16 @@ class TopicsFragment : Fragment() {
 
         _binding = FragmentTopicsBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        val listView: ListView = binding.listviewTopics
+        val listItems = arrayOf("Representation Theory", "Smooth Manifolds and Algebraic Topology", "Analysis")
+        val adapter = ArrayAdapter(requireContext(), R.layout.simple_list_item_1, listItems)
+        listView.adapter = adapter
 
-        val textView: TextView = binding.textTopics
-        topicsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        listView.setOnItemClickListener { _, _, position, _ ->
+            val selectedItem = listItems[position]
+            val detailIntent =
+                ActivityFlashcardsTopics.newIntent(requireContext(), "$selectedItem.xml")
+            startActivity(detailIntent)
         }
         return root
     }
