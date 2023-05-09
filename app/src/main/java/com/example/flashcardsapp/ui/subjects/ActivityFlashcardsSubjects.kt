@@ -20,7 +20,6 @@ class ActivityFlashcardsSubjects : AppCompatActivity() {
         setContentView(R.layout.activity_flashcards_subjects)
         val cardView = findViewById<CardView>(R.id.card_view)
         val fileName = intent.getStringExtra(EXTRA_FILE_NAME)
-        // Open the Algebra.xml file in the assets folder
         val inputStream = fileName?.let { assets.open(it) }
         // Create a new instance of the XmlPullParser interface
         val parser: XmlPullParser = Xml.newPullParser()
